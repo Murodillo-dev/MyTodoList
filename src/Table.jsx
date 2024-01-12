@@ -5,9 +5,8 @@ const Table = () => {
   const [api, setApi] = useState(user);
   const [feild, setFeild] = useState("");
   const [count, setCount] = useState(0);
-  const [task1 , setTask1] = useState('Task')
-  const [task2 , setTask2] = useState('Tasks')
-  // const [data , setData] = useState('.info')
+  const [task1, setTask1] = useState("Task");
+  const [task2, setTask2] = useState("Tasks");
 
   //delete funtion
   function del(parametr) {
@@ -30,13 +29,19 @@ const Table = () => {
     if (feild == null) {
       setApi("");
     }
-
- 
   }
 
   return (
     <div className="todo">
-      <h1>{count} {task2}</h1>
+      {count > 1 ? (
+        <h1>
+          {count} {task2}
+        </h1>
+      ) : (
+        <h1>
+          {count} {task1}
+        </h1>
+      )}
       <div className="task">
         {api.map((r) => {
           return (
